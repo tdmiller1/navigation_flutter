@@ -19,15 +19,23 @@ class LaunchScreen extends StatelessWidget {
         title: Text('Launch Screen'),
       ),
       body: Center(
-        child: RaisedButton(
-          child: Text('Landing Page'),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => LandingPage()),
-            );
-          },
-        ),
+        child: Column(children: <Widget>[
+          RaisedButton(
+            child: Text('Landing Page'),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => LandingPage()),
+              );
+            },
+          ),
+          new Padding(
+              padding: new EdgeInsets.all(18.0),
+              child: TextField(
+                decoration:
+                    InputDecoration(hintText: 'Please enter a search term'),
+              ))
+        ]),
       ),
     );
   }
